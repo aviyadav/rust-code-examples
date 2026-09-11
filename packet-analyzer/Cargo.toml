@@ -1,0 +1,8 @@
+[package]
+name = "packet-analyzer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ctrlc = "3.5.2"
+pcap = "2.5.0"
