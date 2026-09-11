@@ -1,0 +1,47 @@
+[package]
+name = "rust-design-patterns-eg"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Design pattern examples implemented in Rust"
+publish = false
+default-run = "rust-design-patterns-eg"
+
+[dependencies]
+
+# Each pattern demo in src/dp/ needs its own [[bin]] entry.
+# Run one with: cargo run --bin <name>
+[[bin]]
+name = "builder"
+path = "src/dp/builder.rs"
+
+[[bin]]
+name = "newtype"
+path = "src/dp/newtype.rs"
+
+[[bin]]
+name = "iterator"
+path = "src/dp/iterator.rs"
+
+[[bin]]
+name = "strategy"
+path = "src/dp/strategy.rs"
+
+[[bin]]
+name = "state"
+path = "src/dp/state.rs"
+
+[[bin]]
+name = "option-result"
+path = "src/dp/option-result.rs"
+
+[[bin]]
+name = "type-state"
+path = "src/dp/type-state.rs"
+
+
+# Smaller, faster release binaries.
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
