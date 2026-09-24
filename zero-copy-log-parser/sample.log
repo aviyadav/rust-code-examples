@@ -1,0 +1,4 @@
+2026-09-15T10:20:30Z INFO token=abc123 message=Server started
+2026-09-15T10:21:04Z WARN token=user-456 message=Disk usage is above 80%
+2026-09-15T10:22:17Z ERROR token=secret-token message=Database connection failed
+2026-09-15T10:23:40Z DEBUG token=local-dev message=Cache entry refreshed
