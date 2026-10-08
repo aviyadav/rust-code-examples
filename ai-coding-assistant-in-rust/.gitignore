@@ -1,0 +1,12 @@
+# Build output
+/target
+
+# Project metadata written by `rai init`: sessions, logs, and the repository
+# index are local state, not source.
+.rai/logs/
+.rai/sessions/
+.rai/indexes/
+
+# Keep the reviewable parts of the trust model in version control.
+!.rai/config.toml
+!.rai/memories.md

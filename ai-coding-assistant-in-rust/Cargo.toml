@@ -1,0 +1,48 @@
+[package]
+name = "rai"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "rai - a local AI coding assistant CLI: the Rust governance layer between a model and your machine."
+license = "MIT OR Apache-2.0"
+default-run = "rai"
+
+[lib]
+name = "rai"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rai"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde", "clock"] }
+clap = { version = "4", features = ["derive", "env", "wrap_help"] }
+futures = "0.3"
+ignore = "0.4"
+regex = "1"
+reqwest = { version = "0.12", features = ["json", "stream"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tokio = { version = "1", features = [
+    "rt-multi-thread",
+    "macros",
+    "process",
+    "io-util",
+    "io-std",
+    "time",
+    "signal",
+    "sync",
+    "fs",
+] }
+toml = "0.8"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+lto = "thin"
+strip = true
