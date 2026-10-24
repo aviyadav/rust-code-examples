@@ -1,0 +1,9 @@
+level,source,message,order_id,customer,total_cents,status
+TRACE,shop::db,"query executed: SELECT sku, quantity FROM order_items WHERE order_id = $1",ORD-2001,Ada Lovelace,6496,approved
+DEBUG,shop::cache,cache hit,ORD-2001,Ada Lovelace,6496,approved
+INFO,shop::checkout,order accepted,ORD-2001,Ada Lovelace,6496,approved
+INFO,shop::checkout,"order accepted, customer notified",ORD-2002,Katherine Johnson,8999,approved
+WARN,shop::pricing,high-value order flagged,ORD-2003,Grace Hopper,12900,review
+ERROR,shop::payments,"payment declined ""card_declined""",ORD-2004,Alan Turing,6198,declined
+DEBUG,shop::cache,"cache key ""customer:CUS-63"", stale",ORD-2005,Linus Torvalds,5797,review
+WARN,shop::db,slow query,ORD-2006,Margaret Hamilton,7096,approved

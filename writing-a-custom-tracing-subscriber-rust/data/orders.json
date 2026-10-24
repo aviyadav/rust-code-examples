@@ -1,0 +1,121 @@
+[
+  {
+    "order_id": "ORD-1042",
+    "customer": {
+      "id": "CUS-42",
+      "name": "Ada Lovelace",
+      "tier": "gold"
+    },
+    "channel": "web",
+    "items": [
+      { "sku": "rust-in-action", "quantity": 1, "unit_price_cents": 4999 },
+      { "sku": "terminal-stickers", "quantity": 3, "unit_price_cents": 499 }
+    ],
+    "payment": {
+      "method": "card",
+      "status": "approved",
+      "reference": "pay_1042a"
+    },
+    "cache_hit": false,
+    "db_latency_ms": 18
+  },
+  {
+    "order_id": "ORD-1043",
+    "customer": {
+      "id": "CUS-77",
+      "name": "Grace Hopper",
+      "tier": "silver"
+    },
+    "channel": "mobile",
+    "items": [
+      { "sku": "mechanical-keyboard", "quantity": 1, "unit_price_cents": 12900 }
+    ],
+    "payment": {
+      "method": "card",
+      "status": "approved",
+      "reference": "pay_1043b"
+    },
+    "cache_hit": true,
+    "db_latency_ms": 7
+  },
+  {
+    "order_id": "ORD-1044",
+    "customer": {
+      "id": "CUS-91",
+      "name": "Alan Turing",
+      "tier": "gold"
+    },
+    "channel": "partner",
+    "items": [
+      { "sku": "usb-c-cable", "quantity": 2, "unit_price_cents": 2499 },
+      { "sku": "notebook-a5", "quantity": 1, "unit_price_cents": 1200 }
+    ],
+    "payment": {
+      "method": "card",
+      "status": "declined",
+      "reference": "pay_1044c"
+    },
+    "cache_hit": false,
+    "db_latency_ms": 64
+  },
+  {
+    "order_id": "ORD-1045",
+    "customer": {
+      "id": "CUS-58",
+      "name": "Katherine Johnson",
+      "tier": "standard"
+    },
+    "channel": "web",
+    "items": [
+      { "sku": "monitor-stand", "quantity": 1, "unit_price_cents": 8999 }
+    ],
+    "payment": {
+      "method": "paypal",
+      "status": "approved",
+      "reference": "pay_1045d"
+    },
+    "cache_hit": true,
+    "db_latency_ms": 12
+  },
+  {
+    "order_id": "ORD-1046",
+    "customer": {
+      "id": "CUS-63",
+      "name": "Linus Torvalds",
+      "tier": "standard"
+    },
+    "channel": "mobile",
+    "items": [
+      { "sku": "coffee-beans", "quantity": 2, "unit_price_cents": 1599 },
+      { "sku": "desk-mat", "quantity": 1, "unit_price_cents": 2599 }
+    ],
+    "payment": {
+      "method": "invoice",
+      "status": "review",
+      "reference": "pay_1046e"
+    },
+    "cache_hit": true,
+    "db_latency_ms": 31
+  },
+  {
+    "order_id": "ORD-1047",
+    "customer": {
+      "id": "CUS-12",
+      "name": "Margaret Hamilton",
+      "tier": "platinum"
+    },
+    "channel": "partner",
+    "items": [
+      { "sku": "headphones", "quantity": 1, "unit_price_cents": 3499 },
+      { "sku": "webcam-1080p", "quantity": 2, "unit_price_cents": 799 },
+      { "sku": "notebook-a5", "quantity": 1, "unit_price_cents": 1999 }
+    ],
+    "payment": {
+      "method": "card",
+      "status": "approved",
+      "reference": "pay_1047f"
+    },
+    "cache_hit": false,
+    "db_latency_ms": 45
+  }
+]

@@ -1,0 +1,61 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src\lib.rs (target\debug\deps\custom_tracing_subscriber-13167f6be43ab712.exe)
+
+running 6 tests
+test csv_text::tests::rejects_an_unterminated_quote ... ok
+test csv_text::tests::cloned_span_state_survives_until_the_last_handle_closes ... ok
+test csv_text::tests::rejects_a_missing_required_column ... ok
+test csv_text::tests::rejects_an_invalid_level ... ok
+test csv_text::tests::parses_quoted_commas_and_escaped_quotes ... ok
+test tests::cloned_span_data_survives_until_the_last_handle_closes ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\main.rs (target\debug\deps\custom_tracing_subscriber-1e50af82f87dbef5.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\csv_text.rs (target\debug\deps\csv_text-92e0d5d60f2fc9d6.exe)
+
+running 5 tests
+test sample_csv_parses ... ok
+test text_visitor_renders_csv_records_as_text_lines ... ok
+test max_level_filters_csv_rows ... ok
+test span_context_is_popped_after_the_batch ... ok
+test span_tracking_adds_nested_context_and_recorded_fields ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\logging.rs (target\debug\deps\logging-c9b27947c87f77d8.exe)
+
+running 2 tests
+test writer_receives_all_levels_and_span_context ... ok
+test file_destination_creates_parents_and_writes_events ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\subscriber.rs (target\debug\deps\subscriber-455e9e18ea2f2a75.exe)
+
+running 11 tests
+test json_includes_an_empty_span_array_when_enabled ... ok
+test default_level_filters_less_severe_events ... ok
+test module_filter_overrides_the_default_level ... ok
+test json_output_uses_an_rfc3339_utc_timestamp ... ok
+test json_output_preserves_types_and_span_context ... ok
+test module_filters_can_raise_and_lower_verbosity ... ok
+test nested_spans_render_in_order_and_pop_on_exit ... ok
+test span_record_updates_context_for_later_events ... ok
+test text_output_has_typed_fields_and_span_context ... ok
+test text_output_uses_an_rfc3339_utc_timestamp ... ok
+test spans_can_be_omitted_from_text_output ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests custom_tracing_subscriber
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

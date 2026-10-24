@@ -1,0 +1,5 @@
+2026-10-24T22:21:40.616Z [INFO ] custom_tracing_subscriber::logging: service starting service="checkout" version="1.0.0"
+2026-10-24T22:21:40.616Z [DEBUG] request{request_id=req-42, user=ada}: custom_tracing_subscriber::logging: processing cart items=2
+2026-10-24T22:21:40.616Z [INFO ] request{request_id=req-42, user=ada}: custom_tracing_subscriber::logging: order accepted order_id="ORD-2001" total_cents=6496
+2026-10-24T22:21:40.616Z [WARN ] request{request_id=req-42, user=ada}: custom_tracing_subscriber::logging: low stock stock=3
+2026-10-24T22:21:40.616Z [ERROR] request{request_id=req-42, user=ada}: custom_tracing_subscriber::logging: downstream timeout code=500
