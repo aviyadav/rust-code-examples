@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "INSERT INTO orders (customer_email, total_cents, status) VALUES ($1, $2, $3)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 3
+    },
+    "nullable": []
+  },
+  "hash": "881b7851b9f9d1f9c200ffb98bb16a81807b54e1f2fdd607277226e0c80a5356"
+}

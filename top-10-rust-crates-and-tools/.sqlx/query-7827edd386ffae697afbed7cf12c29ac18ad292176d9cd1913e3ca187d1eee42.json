@@ -1,0 +1,40 @@
+{
+  "db_name": "SQLite",
+  "query": "SELECT status AS \"status: Status\",\n                  COUNT(*)         AS \"orders!: i64\",\n                  SUM(total_cents) AS \"revenue_cents!: i64\"\n             FROM orders\n            GROUP BY status\n            ORDER BY status",
+  "describe": {
+    "columns": [
+      {
+        "name": "status: Status",
+        "ordinal": 0,
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "orders",
+            "name": "status"
+          }
+        }
+      },
+      {
+        "name": "orders!: i64",
+        "ordinal": 1,
+        "type_info": "Integer",
+        "origin": "Expression"
+      },
+      {
+        "name": "revenue_cents!: i64",
+        "ordinal": 2,
+        "type_info": "Integer",
+        "origin": "Expression"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "7827edd386ffae697afbed7cf12c29ac18ad292176d9cd1913e3ca187d1eee42"
+}
