@@ -1,0 +1,10 @@
+[package]
+name = "rust-ai-agent"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1"
+dotenvy = "0.15"
+rig = "0.44"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
