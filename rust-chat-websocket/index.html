@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rust Chat</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #f3f4f6;
+        color: #111827;
+        font: 16px/1.5 system-ui, sans-serif;
+      }
+      main {
+        width: min(600px, calc(100% - 32px));
+        height: min(700px, calc(100vh - 32px));
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+        border-radius: 16px;
+        background: white;
+        box-shadow: 0 10px 30px #0001;
+      }
+      header { display: flex; justify-content: space-between; align-items: center; }
+      h1 { margin: 0; font-size: 24px; }
+      #status { color: #6b7280; font-size: 14px; }
+      #messages {
+        flex: 1;
+        overflow-y: auto;
+        margin: 0;
+        padding: 16px;
+        border-radius: 12px;
+        background: #f9fafb;
+        list-style: none;
+      }
+      #messages li { padding: 6px 0; overflow-wrap: anywhere; }
+      form { display: flex; gap: 8px; }
+      input {
+        flex: 1;
+        min-width: 0;
+        padding: 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font: inherit;
+      }
+      button {
+        padding: 12px 20px;
+        border: 0;
+        border-radius: 8px;
+        background: #2563eb;
+        color: white;
+        font: inherit;
+        cursor: pointer;
+      }
+      button:disabled { opacity: 0.5; cursor: not-allowed; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Rust Chat</h1>
+        <span id="status" role="status">Connecting…</span>
+      </header>
+      <ul id="messages" aria-live="polite" aria-label="Chat messages"></ul>
+      <form id="form">
+        <input id="message" aria-label="Message" placeholder="Type a message…" autocomplete="off" required />
+        <button id="send" type="submit" disabled>Send</button>
+      </form>
+   </button> </main>
+    <script>
+      const status = document.querySelector("#status");
+      const messages = document.querySelector("#messages");
+      const form = document.querySelector("#form");
+      const input = document.querySelector("#message");
+      const send = document.querySelector("#send");
+      const socket = new WebSocket("ws://127.0.0.1:3000/ws");
+
+      socket.onopen = () => {
+        status.textContent = "Connected";
+        send.disabled = false;
+        input.focus();
+      };
+
+      socket.onmessage = ({ data }) => {
+        const item = document.createElement("li");
+        item.textContent = data;
+        messages.append(item);
+        item.scrollIntoView();
+      };
+
+      socket.onclose = () => {
+        status.textContent = "Disconnected — restart the Rust server and refresh";
+        send.disabled = true;
+      };
+
+      socket.onerror = () => {
+        status.textContent = "Connection error — is the Rust server running?";
+      };
+
+      form.onsubmit = (event) => {
+        event.preventDefault();
+        if (socket.readyState !== WebSocket.OPEN) return;
+        socket.send(input.value);
+        input.value = "";
+        input.focus();
+      };
+    </script>
+  </body>
+</html>

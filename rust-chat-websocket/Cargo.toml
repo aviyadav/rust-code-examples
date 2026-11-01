@@ -1,0 +1,9 @@
+[package]
+name = "rust-chat-websocket"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+axum = { version = "0.8.9", features = ["ws"] }
+futures-util = "0.3.34"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net", "sync", "signal"] }
