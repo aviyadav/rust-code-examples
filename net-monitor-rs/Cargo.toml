@@ -1,0 +1,11 @@
+[package]
+name = "net-monitor-rs"
+version = "0.1.0"
+edition = "2024"
+description = "Real-time Linux network interface monitor for the terminal, built on ratatui"
+license = "MIT"
+
+[dependencies]
+anyhow = "1.0.104"
+crossterm = "0.29.0"
+ratatui = "0.30.2"
