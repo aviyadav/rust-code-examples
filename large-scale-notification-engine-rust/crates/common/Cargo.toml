@@ -1,0 +1,13 @@
+[package]
+name = "common"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+rdkafka.workspace = true
+sqlx.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+chrono.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
